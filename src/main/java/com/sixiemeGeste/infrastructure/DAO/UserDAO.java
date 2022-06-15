@@ -1,12 +1,10 @@
 package com.sixiemeGeste.infrastructure.DAO;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -17,7 +15,8 @@ import java.util.Date;
 @NoArgsConstructor
 @Table(name = "user")
 public class UserDAO {
-    @Id
+    @Id @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String userId;
 
     @Column(unique = true)
@@ -29,4 +28,8 @@ public class UserDAO {
     private String lastName;
 
     private Date dob;
+
+    public UserDAO(String userId) {
+        this.userId = userId;
+    }
 }
