@@ -1,4 +1,4 @@
-package com.sixiemeGeste.sixiemeGeste;
+package com.sixiemeGeste;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
