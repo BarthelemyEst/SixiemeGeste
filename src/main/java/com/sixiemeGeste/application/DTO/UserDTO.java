@@ -31,4 +31,10 @@ public class UserDTO implements Serializable {
     private String lastName;
     private Date Dob;
 
+    public UserDTO(String firstName, String lastName, String email, String username) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.username = username;
+    }
 }
